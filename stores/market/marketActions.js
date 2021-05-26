@@ -37,7 +37,7 @@ export function getHoldings(
       .then((res) => {
         console.log("GET HOLDINGS");
         console.log(res);
-        if (res.state == 200) {
+        if (res.status == 200) {
           let myHoldings = res.data.map((item) => {
             //Retrieve our current holdings => current quantity
             let coin = holdings.find((a) => a.id == item.id);
@@ -129,7 +129,7 @@ export function getCoinMarket(
       .then((res) => {
         console.log("GetCoinMarket");
         console.log(res);
-        if (res.state == 200) {
+        if (res.status == 200) {
           dispatch(getCoinMarketSuccess(res.data));
         } else {
           dispatch(getCoinMarketFailure(res.data));
